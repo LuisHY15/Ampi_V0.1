@@ -2,15 +2,13 @@
 
 if ( isset($_POST['nombre']) ){
 
-	$categoria 	= mysql_real_escape_string($_POST['categoria']);
-	$nombre 	= mysql_real_escape_string($_POST['nombre']);
-	$direccion  = mysql_real_escape_string($_POST['direccion']);
-	$telefono  	= mysql_real_escape_string($_POST['telefono']);
-	$contacto  	= mysql_real_escape_string($_POST['contacto']);
-	$correo  	= mysql_real_escape_string($_POST['correo']);
-	$rfc  		= mysql_real_escape_string($_POST['rfc']);
+	$cliente 	= mysql_real_escape_string($_POST['cliente']);
+	$rento 	    = mysql_real_escape_string($_POST['rento']);
+	$fecha_ini  = mysql_real_escape_string($_POST['fecha_ini']);
+	$fecha_fin 	= mysql_real_escape_string($_POST['fecha_fin']);
 
-	if ( mysql_query("INSERT INTO clientes SET fecha='".date("Y-m-d")."',categoria='".$categoria."',nombre='".$nombre."',direccion='".$direccion."',telefono='".$telefono."',contacto='".$contacto."',email='".$correo."',rfc='".$rfc."'") ){
+
+	if ( mysql_query() ){
 		$errorMsg = '<div class="alert alert-success">
 				<i class="fa fa-check"></i> Cliente agregado correctamente.
 			</div>';
@@ -36,36 +34,42 @@ if ( isset($_POST['nombre']) ){
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="col-lg-2 control-label">Cliente</label>
-								<div class="col-lg-10"><input type="text" name="nombre" class="form-control" placeholder=""></div>
+								<label class="col-lg-4 control-label">Cliente</label>
+								<div class="col-lg-8"><input type="text" name="cliente" class="form-control" placeholder=""></div>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="col-lg-2 control-label">Que rento....?</label>
-								<div class="col-lg-10"><input type="text" name="direccion" class="form-control" placeholder=""></div>
+								<label class="col-lg-4 control-label">Que rento....?</label>
+								<div class="col-lg-8"><input type="text" name="rento" class="form-control" placeholder=""></div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
-								<label class="col-lg-2 control-label">Fecha inicial</label>
-								<div class="col-lg-10"><input type="text" name="nombre" class="form-control" placeholder=""></div>
+								<label class="col-lg-6 control-label">Fecha inicial</label>
+								<div class="col-lg-6"><input type="text" name="fecha_ini" class="form-control" placeholder=""></div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-2">
+							
+						</div>
+						<div class="col-md-4">
 							<div class="form-group">
-								<label class="col-lg-2 control-label">Fecha Final</label>
-								<div class="col-lg-10"><input type="text" name="direccion" class="form-control" placeholder=""></div>
+								<label class="col-lg-6 control-label">Fecha Final</label>
+								<div class="col-lg-6"><input type="text" name="fecha_fin" class="form-control" placeholder=""></div>
 							</div>
+						</div>
+						<div class="col-md-2">
+							
 						</div>
 					</div>
 					<div class="line line-dashed line-lg pull-in"></div>
 					<div class="form-group text-right">
 						<div class="col-lg-12"> 
 							<button type="submit" class="btn btn-sm btn-success"><i class="fa fa-check icon"></i> Agregar</button>
-							<a href="admin.php?m=clientes" class="btn btn-sm btn-danger"><i class="fa fa-times icon"></i> Cancelar</a>
+							<a href="admin.php?m=" class="btn btn-sm btn-danger"><i class="fa fa-times icon"></i> Cancelar</a>
 						</div>
 					</div>
 				</form>

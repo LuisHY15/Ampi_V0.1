@@ -25,7 +25,7 @@ if ( isset($_POST['nombre']) ){
 				<div class="pull-right">
 					<a href="admin.php?m=propiedadesMis" class="return"><i class="fa fa-mail-reply"></i> Regresar</a>
 				</div>
-				<i class="fa fa-plus icon"></i> Agregar propiedad
+				<i class="fa fa-plus icon"></i> Editar propiedad
 			</header>
 			<div class="panel-body">
 				<form class="bs-example form-horizontal" action="" method="post">
